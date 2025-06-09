@@ -2,12 +2,12 @@ trigger:
 - master
 
 pool:
-  name:Default
+  name: Default
 
 steps:
-  - script:echo MyFirst Maven Project
-    displayName:Run one-line script
-  - script:mvn clean install
-    displayName:'Build with Maven'
-  - script:java -jar target/Maven262-1.0-SNAPSHOT.jar
-    displayName:'Running jar'
+  - script: echo MyFirst Maven Project
+    displayName: Run one-line script
+  - script: mvn clean install
+    displayName: 'Build with Maven'
+  - script: java -jar target/Maven262-1.0-SNAPSHOT.jar
+    displayName: 'Running jar'
