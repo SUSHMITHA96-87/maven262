@@ -1,36 +1,36 @@
 pipeline{
-	agent again
+	agent any
 	tools{
-		maven'Maven'
+		maven 'Maven'
 	}
 	stages{
 		stage('Checkout'){
 			steps{
-				git bash:'master',url:'https://github.com/SUSHMITHA96-87/maven262.git'
+				git branch:'master',url:'https://github.com/SUSHMITHA96-87/maven262.git'
 			}
 		}
 		stage('Build'){
 			steps{
-				sh'mvn clean package'
+				sh 'mvn clean package'
 			}
 		}
 		stage('Test'){
 			steps{
-				sh'mvn test'
+				sh 'mvn test'
 			}
 		}
 		stage('Run Application'){
 			steps{
-				sh'java -jar target/Maven262-1.0-SNAPSHOT.jar'
+				sh 'java -jar target/Maven262-1.0-SNAPSHOT.jar'
 			}
 		}
 	}
 	post{
 		success{
-			echo'build and deploy successfully!'
+			echo 'build and deploy successfully!'
 		}
 		failure{
-			echo'build failure'
+			echo 'build failure'
 		}
 	}
 }
